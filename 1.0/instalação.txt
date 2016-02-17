@@ -1,0 +1,19 @@
+#Para instalar digite os seguintes comandos no terminal:
+
+	cd /diretório_em_que_a_pasta_jogodavelha_está
+	make
+	sudo make install
+	make clean
+
+#Pronto, agora basta digitar
+
+	jogodavelha
+
+#para jogar.
+
+#Para remover o jogo basta ir para o mesmo diretório pelo terminal e digitar
+
+	sudo make remove
+
+ou então remover o arquivo "jogodavelha" da pasta /usr/local/bin bem como a pasta
+jogodavelha (se quiser remover completamente).
