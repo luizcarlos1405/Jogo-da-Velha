@@ -1,32 +1,29 @@
-<<<<<<< HEAD
-=======
-=> English
+------- English ----------
 
-# Type those commands in your teminal:
+#For installing just type the following commands
 
-	cd /directori_where_the_game_is
+	cd .../tictactoe
 	make
-	$ make install
+	sudo make install
 	make clean
 
-# Now just type
+#Done, now type
 
 	jogodavelha
 
-# To play and have fun!
+#To play and have fun!
 
-# If you want to completely remove the game type
+#If you want to remove the game completely use
 
-	$ make remove
+	sudo make remove
 
-Or remove the file "jogodavelha" frim /usr/local/bin and the files you downloaded (if you want to remove it completely).
+#Or manually remove jogodavelha from /usr/local/bin as well as the original files
 
-=> Portugues
+------- Portugues --------
 
->>>>>>> 4e70902fd9b4aab42e3b11d523c6b3d144034c33
 #Para instalar digite os seguintes comandos no terminal:
 
-	cd /diretório_em_que_a_pasta_jogodavelha_está
+	cd .../tictactoe
 	make
 	sudo make install
 	make clean

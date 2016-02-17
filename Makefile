@@ -2,12 +2,12 @@ CSRC = $(wildcard *.c)
 
 jogodavelha:   $(CSRC:.c=.o)
 	@echo Creating executable.
-	@gcc -o $@ $^
+	@gcc -o $@ $^ -lncurses
 	@echo Done.
 
 %.o:	%.c
 	@echo Compiling object files: $@
-	@gcc -c $<
+	@gcc -c $< -lncurses
 	@echo Done.
 
 clean:
