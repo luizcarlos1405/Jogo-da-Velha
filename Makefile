@@ -1,39 +1,35 @@
 CSRC = $(wildcard *.c)
 
 jogodavelha:   $(CSRC:.c=.o)
-	@echo Criando executável.
+	@echo Creating executable.
 	@gcc -o $@ $^
-	@echo Feito.
+	@echo Done.
 
 %.o:	%.c
-	@echo Compilando arquivo objeto: $@
+	@echo Compiling object files: $@
 	@gcc -c $<
-	@echo Feito.
+	@echo Done.
 
 clean:
-	@echo removendo arquivos objetos.
-<<<<<<< HEAD
+	@echo Removing object files.
 	@rm *.o *.d
-=======
-	@rm *.o *.d jogodavelha
->>>>>>> 4e70902fd9b4aab42e3b11d523c6b3d144034c33
-	@echo Feito.
+	@echo Done.
 
 remade:
-	@echo Recompilando.
+	@echo Recompiling.
 	@$(MAKE) clean
 	@$(MAKE)
-	@echo Feito.
+	@echo Done.
 
 install:
-	@echo Instalando.
+	@echo Installing.
 	@cp ./jogodavelha /usr/local/bin
-	@echo Feito.
+	@echo Done.
 
 remove:
-	@echo Removendo.
+	@echo Removing.
 	@rm /usr/local/bin/jogodavelha
-	@echo Feito.
+	@echo Done.
 
 -include $(CSRC:.c=.d)
 

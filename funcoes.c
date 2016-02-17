@@ -9,7 +9,7 @@
 #define ESQUERDA 68
 #define ESCOLHER 10
 
-void inicializacampo(char casas[3][3]){ 
+void inicializacampo(char casas[3][3]){
     int i,
         j;
     for ( i = 0; i < 3 ; i++){
@@ -22,7 +22,7 @@ void inicializacampo(char casas[3][3]){
  *  o campo em branco quando for impresso, evitando imprimir lixo. Faz isso
  * percorrendo todos os valores com os laços for. */
 
-void imprimecampo(char casas[3][3]){ 
+void imprimecampo(char casas[3][3]){
     int i,
         j;
     system("cls || clear");
@@ -63,8 +63,8 @@ void jogadorx(char casas[3][3], int *ip, int *jp, int *fimdejogo){
     printf("\n\n\n Use os direcionais para mover e Enter para escolher o local.\n 'S' para sair.");
     while (pare){
         switch(comando()){
-            case CIMA: 
-                if(*ip>0){ 
+            case CIMA:
+                if(*ip>0){
                     casas[*ip][*jp]=old;
                     /* Aqui os valores atuais de i e j retornam ao seu valor original, deixando seja lá o
                      * que estivesse naquela posição exatamente onde estava, sem modificar os valores
@@ -87,18 +87,18 @@ void jogadorx(char casas[3][3], int *ip, int *jp, int *fimdejogo){
                  * Por isso ela é iniciada com os valores atuais de i e j (passados por referência usando
                  * os ponteiros declarados na função 'partida'*/
             break;
-            case ESQUERDA: 
+            case ESQUERDA:
                 if(*jp > 0){
                     casas[*ip][*jp] = old;
                     *jp = *jp-1;
                     old = casas[*ip][*jp];
                     casas[*ip][*jp] = 'x';
-                    imprimecampo(casas); 
+                    imprimecampo(casas);
                     printf("\n\n\n Use os direcionais para mover e Enter para escolher o local.\n 'S' para sair.");
                 }
                 /* Exatamente a mesma coisa é feita para os comandos ESQUERDA, DIREITA e BAIXO. */
             break;
-            case BAIXO: 
+            case BAIXO:
                 if (*ip < 2){
                     casas[*ip][*jp] = old;
                     *ip = *ip+1;
@@ -118,8 +118,8 @@ void jogadorx(char casas[3][3], int *ip, int *jp, int *fimdejogo){
                     printf("\n\n\n Use os direcionais para mover e Enter para escolher o local.\n 'S' para sair.");
                 }
             break;
-            case ESCOLHER: 
-                if(old == ' '){ 
+            case ESCOLHER:
+                if(old == ' '){
                     casas[*ip][*jp] = 'X';
                     pare = 0;
                     /* Perceba que o caractere que anda pelo campo é minúsculo, mas quando é escolhido o lugar
@@ -139,7 +139,7 @@ void jogadorx(char casas[3][3], int *ip, int *jp, int *fimdejogo){
         }
     }
 }
-/* Função jogadorx rege a jogada do jogadorx e define as mudançadas dos valores de 
+/* Função jogadorx rege a jogada do jogadorx e define as mudançadas dos valores de
  * i, j e de um dos valores do vetor casas. Uitiliza ponteiros para passagem por
  * referência.  */
 
@@ -156,15 +156,15 @@ void jogadoro(char casas[3][3], int *ip, int *jp, int *fimdejogo){
                     casas[*ip][*jp] = old;
                     *ip = *ip-1;
                     old = casas[*ip][*jp];
-                    casas[*ip][*jp] = 'o'; 
+                    casas[*ip][*jp] = 'o';
                     imprimecampo(casas);
                     printf("\n\n\n Use os direcionais para mover e Enter para escolher o local.\n 'S' para sair.");
                 }
             break;
-            case ESQUERDA: 
+            case ESQUERDA:
                 if(*jp > 0){
                     casas[*ip][*jp] = old;
-                    *jp = *jp-1; 
+                    *jp = *jp-1;
                     old = casas[*ip][*jp];
                     casas[*ip][*jp] = 'o';
                     imprimecampo(casas);
@@ -191,7 +191,7 @@ void jogadoro(char casas[3][3], int *ip, int *jp, int *fimdejogo){
                     printf("\n\n\n Use os direcionais para mover e Enter para escolher o local.\n 'S' para sair.");
                 }
             break;
-            case ESCOLHER: 
+            case ESCOLHER:
                 if(old == ' '){
                     casas[*ip][*jp] = 'O';
                     pare = 0;
@@ -205,7 +205,7 @@ void jogadoro(char casas[3][3], int *ip, int *jp, int *fimdejogo){
         }
     }
 }
-/* Função jogadoro rege a jogada do jogadoro e define as mudançadas dos valores de 
+/* Função jogadoro rege a jogada do jogadoro e define as mudançadas dos valores de
  * i, j e de um dos valores de vetor casas. Exatamente a mesma coisa que a 'jogadorx',
  * mas usando os caracteres 'o' e 'O'  */
 
@@ -221,7 +221,7 @@ void ganhador(char casas[3][3], int *continua){
     /* Infelizmente não consegui ver outra forma de testar e identificar o ganhador senão com todas essas condições.
      * Ainda penso em alterar essa função. Não há muito o que explicar, o if e os else if's testam se alguma das
      * colunas, linhas ou diagonais estão todas preenchidas por 'X' ou por 'O' e então informa que este é o
-     * vencedor, pede uma pausa e termina a função alterando o valor da variável 'continua' fazendo com que o 
+     * vencedor, pede uma pausa e termina a função alterando o valor da variável 'continua' fazendo com que o
      * laço que define a partida na função 'partida' termine e o laço maior que depende da variável fimdejogo
      * se repita, reiniciando o campo e perguntando se o jogador deseja continuar ou encerrar. */
     else if ((casas[0][0]==casas[0][1]&&casas[0][0]==casas[0][2]&&casas[0][0]=='O')||(casas[1][0]==casas[1][1]&&casas[1][0]==casas[1][2]&&casas[1][0]=='O')||(casas[2][0]==casas[2][1]&&casas[2][0]==casas[2][2]&&casas[2][0]=='O')||(casas[0][0]==casas[1][0]&&casas[0][0]==casas[2][0]&&casas[0][0]=='O')||(casas[0][1]==casas[1][1]&&casas[0][1]==casas[2][1]&&casas[0][1]=='O')||(casas[0][2]==casas[1][2]&&casas[0][2]==casas[2][2]&&casas[0][2]=='O')||(casas[0][0]==casas[1][1]&&casas[0][0]==casas[2][2]&&casas[0][0]=='O')||(casas[0][2]==casas[1][1]&&casas[0][2]==casas[2][0]&&casas[0][2]=='O')){
@@ -298,7 +298,7 @@ int menuprincipal(){
 			case ESCOLHER:
 				if (i != 1)
 					dentro = 0;
-				/* Sai do menu, retornando a opção desejada (0, 1 ou 2) */	
+				/* Sai do menu, retornando a opção desejada (0, 1 ou 2) */
 			break;
 		}
 	}
