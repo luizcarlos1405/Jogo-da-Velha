@@ -12,7 +12,11 @@ jogodavelha:   $(CSRC:.c=.o)
 
 clean:
 	@echo removendo arquivos objetos.
+<<<<<<< HEAD
 	@rm *.o *.d
+=======
+	@rm *.o *.d jogodavelha
+>>>>>>> 4e70902fd9b4aab42e3b11d523c6b3d144034c33
 	@echo Feito.
 
 remade:

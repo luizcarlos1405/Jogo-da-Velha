@@ -1,3 +1,29 @@
+<<<<<<< HEAD
+=======
+=> English
+
+# Type those commands in your teminal:
+
+	cd /directori_where_the_game_is
+	make
+	$ make install
+	make clean
+
+# Now just type
+
+	jogodavelha
+
+# To play and have fun!
+
+# If you want to completely remove the game type
+
+	$ make remove
+
+Or remove the file "jogodavelha" frim /usr/local/bin and the files you downloaded (if you want to remove it completely).
+
+=> Portugues
+
+>>>>>>> 4e70902fd9b4aab42e3b11d523c6b3d144034c33
 #Para instalar digite os seguintes comandos no terminal:
 
 	cd /diretório_em_que_a_pasta_jogodavelha_está
