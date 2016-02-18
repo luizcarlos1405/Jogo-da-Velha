@@ -1,11 +1,11 @@
-/* Tic-Tac-Te functions that are menus                             */
+/* Tic-Tac-Toe functions that are menus                             */
 
 #include "tictactoe.h"
 
 /* Print and control mainmenu */
 int mainmenu(){
 
-	/* Iniciates ncurses screan */
+	/* Iniciates ncurses screen */
 	initscr();
 	/* Desable echoes from terminal */
 	noecho();
@@ -24,12 +24,12 @@ int mainmenu(){
     mvprintw(2, 35, "TIC-TAC-TOE");
     mvprintw(3, 34, "-------------");
 
-	/* Prints the optcions****/
+	/* Prints the options */
 	mvprintw(5, 35, "Play");
 	mvprintw(6, 35, "Options");
 	mvprintw(7, 35, "Exit");
 
-	/* Moves to the first option of the menu */
+	/* Moves to the first menu's option */
 	move(y, x);
 
 	/* Controls the movement, choosing and the output of the function */
@@ -56,7 +56,7 @@ int mainmenu(){
 	}
 }
 
-/* Shows up the first menu for choosing and return the option */
+/* Shows up the first menu for choosing and returns the watever is choosed */
 int matchendmenu(){
 	
 	int matchendmenu = 1,
