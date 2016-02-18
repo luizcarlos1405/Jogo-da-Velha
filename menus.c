@@ -1,10 +1,15 @@
+/* Tic-Tac-Te functions that are menus                             */
+
 #include "tictactoe.h"
 
-/***** Print and control mainmenu **************/
+/* Print and control mainmenu */
 int mainmenu(){
 
-	initscr(); /* para chamar ncurses */
+	/* Iniciates ncurses screan */
+	initscr();
+	/* Desable echoes from terminal */
 	noecho();
+	/* Allows to use KEY_* constants */
 	keypad(stdscr, TRUE);
 	cbreak();
 
@@ -14,18 +19,20 @@ int mainmenu(){
 
 	clear();
 
-	/***** Prints the title ******************/
+	/* Prints the title */
 	mvprintw(1, 34, "-------------");
     mvprintw(2, 35, "TIC-TAC-TOE");
     mvprintw(3, 34, "-------------");
 
-	/***** Prints the optcions****************/
+	/* Prints the optcions****/
 	mvprintw(5, 35, "Play");
 	mvprintw(6, 35, "Options");
 	mvprintw(7, 35, "Exit");
 
+	/* Moves to the first option of the menu */
 	move(y, x);
 
+	/* Controls the movement, choosing and the output of the function */
 	while(mainmenu){
 		switch (comand()) {
 			case UP:
@@ -49,23 +56,26 @@ int mainmenu(){
 	}
 }
 
-/***** Shows up the first menu for choosing ****
- * and return the option ***********************/
+/* Shows up the first menu for choosing and return the option */
 int matchendmenu(){
 
 	int matchendmenu = 1,
 		y = 11,
 		x = 1;
 
+	/* Move to the bottom and deletes the two lines that gives instructions */
 	move(11, 1);
 	deleteln();
 	deleteln();
 
+	/* Then prints the menu where the instructions were */
 	mvprintw(11, 1, "Play again");
 	mvprintw(12, 1, "Main menu");
 
+	/* Moves to the first option of the menu */
 	move(y, x);
 
+	/* Controls the movement, choosing and the output of the function */
 	while(matchendmenu){
 		switch (comand()) {
 			case UP:

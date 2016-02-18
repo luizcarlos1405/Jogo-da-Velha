@@ -1,6 +1,6 @@
 CSRC = $(wildcard *.c)
 
-jogodavelha:   $(CSRC:.c=.o)
+tictactoe:   $(CSRC:.c=.o)
 	@echo Creating executable.
 	@gcc -o $@ $^ -lncurses
 	@echo Done.
@@ -23,12 +23,17 @@ remade:
 
 install:
 	@echo Installing.
-	@cp ./jogodavelha /usr/local/bin
+	@mv ./tictactoe /usr/local/bin
 	@echo Done.
 
 remove:
 	@echo Removing.
-	@rm /usr/local/bin/jogodavelha
+	@rm /usr/local/bin/tictactoe
+	@echo Done.
+
+run:
+	@echo Running Game
+	@./tictactoe
 	@echo Done.
 
 -include $(CSRC:.c=.d)

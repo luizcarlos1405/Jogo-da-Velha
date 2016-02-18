@@ -1,3 +1,5 @@
+/* Tic-Tac-Toe header, all the functions are listed here                                    */
+
 #ifndef TICTACTOE_H
 #define TICTACTOE_H
 
