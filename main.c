@@ -29,7 +29,7 @@ int main(){
 	cbreak();
 
 	int program = 1;
-    while (program){
+	while (program){
 		switch (mainmenu()){
 			case 5:
 				match();
