@@ -58,7 +58,7 @@ int mainmenu(){
 
 /* Shows up the first menu for choosing and return the option */
 int matchendmenu(){
-
+	
 	int matchendmenu = 1,
 		y = 11,
 		x = 1;

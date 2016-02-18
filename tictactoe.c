@@ -191,7 +191,7 @@ void match(){
 	int y = 7,
 	    x = 40,
 		py = 1,
-		px = 1;
+		px = 1,
 		/* Thos two controls if a match and a round is going on, respectively */
 		match = 11,
 		endround;

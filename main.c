@@ -13,7 +13,7 @@
  * jogo para fins de prática apenas. Acabei me empolgando.                    *
  * Essa atualização inclui a utilização da biblioteca ncurses.                *
  *																			  *
- * Contato: luizcarlos1405@gmail.com                                                   *
+ * Contato: luizcarlos1405@gmail.com                                          *
  *																			  *
  ******************************************************************************/
 
@@ -29,7 +29,6 @@ int main(){
 	cbreak();
 
 	int program = 1;
-
     while (program){
 		switch (mainmenu()){
 			case 5:

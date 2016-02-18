@@ -32,7 +32,7 @@ remove:
 	@echo Done.
 
 run:
-	@echo Running Game
+	@echo Running Game.
 	@./tictactoe
 	@echo Done.
 
