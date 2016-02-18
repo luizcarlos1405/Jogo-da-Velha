@@ -1,6 +1,6 @@
-# -------------
+# -----------------
 #  Tic-Tac-Toe
-# -------------
+# -----------------
 
 Just a Tic-Tac-Toe game a little bit better than you usually see.
 

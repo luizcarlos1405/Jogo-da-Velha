@@ -2,12 +2,12 @@
 
 #include "tictactoe.h"
 
-/* Print and control mainmenu */
+/* Prints and control mainmenu */
 int mainmenu(){
 
-	/* Iniciates ncurses screan */
+	/* Iniciates ncurses screen */
 	initscr();
-	/* Desable echoes from terminal */
+	/* Diseable echoes from terminal */
 	noecho();
 	/* Allows to use KEY_* constants */
 	keypad(stdscr, TRUE);
@@ -24,7 +24,7 @@ int mainmenu(){
     mvprintw(2, 35, "TIC-TAC-TOE");
     mvprintw(3, 34, "-------------");
 
-	/* Prints the optcions****/
+	/* Prints the options****/
 	mvprintw(5, 35, "Play");
 	mvprintw(6, 35, "Options");
 	mvprintw(7, 35, "Exit");
@@ -56,9 +56,9 @@ int mainmenu(){
 	}
 }
 
-/* Shows up the first menu for choosing and return the option */
+/* Shows up the first menu for choosing and return watever is choosed */
 int matchendmenu(){
-	
+
 	int matchendmenu = 1,
 		y = 11,
 		x = 1;

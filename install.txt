@@ -9,7 +9,7 @@
 
 #Done, now type
 
-	jogodavelha
+	tictactoe
 
 #To play and have fun!
 
@@ -17,7 +17,7 @@
 
 	sudo make remove
 
-#Or manually remove jogodavelha from /usr/local/bin as well as the original files
+#Or manually remove tictactoe from /usr/local/bin as well as the original files
 
 ------- Portugues --------
 
@@ -30,7 +30,7 @@
 
 #Pronto, agora basta digitar
 
-	jogodavelha
+	tictactoe
 
 #para jogar.
 
@@ -38,5 +38,5 @@
 
 	sudo make remove
 
-ou então remover o arquivo "jogodavelha" da pasta /usr/local/bin bem como a pasta
-jogodavelha (se quiser remover completamente).
+ou então remover o arquivo "tictactoe" da pasta /usr/local/bin bem como a pasta
+tictactoe (se quiser remover completamente).
