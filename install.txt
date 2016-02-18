@@ -18,6 +18,10 @@
 	sudo make remove
 
 #Or manually remove tictactoe from /usr/local/bin as well as the original files
+<<<<<<< HEAD
+=======
+if you want to remove it completely.
+>>>>>>> 8ca87097ef854ae9b33a341a38fdfe0236526b10
 
 ------- Portugues --------
 
