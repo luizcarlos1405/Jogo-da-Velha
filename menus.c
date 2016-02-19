@@ -21,8 +21,8 @@ int mainmenu(){
 
 	/* Prints the title */
 	mvprintw(1, 34, "-------------");
-    mvprintw(2, 35, "TIC-TAC-TOE");
-    mvprintw(3, 34, "-------------");
+	mvprintw(2, 35, "TIC-TAC-TOE");
+	mvprintw(3, 34, "-------------");
 
 	/* Prints the options */
 	mvprintw(5, 35, "Play");
