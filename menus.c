@@ -24,11 +24,7 @@ int mainmenu(){
     mvprintw(2, 35, "TIC-TAC-TOE");
     mvprintw(3, 34, "-------------");
 
-<<<<<<< HEAD
-	/* Prints the options****/
-=======
 	/* Prints the options */
->>>>>>> 8ca87097ef854ae9b33a341a38fdfe0236526b10
 	mvprintw(5, 35, "Play");
 	mvprintw(6, 35, "Options");
 	mvprintw(7, 35, "Exit");
@@ -60,11 +56,7 @@ int mainmenu(){
 	}
 }
 
-<<<<<<< HEAD
-/* Shows up the first menu for choosing and return watever is choosed */
-=======
 /* Shows up the first menu for choosing and returns the watever is choosed */
->>>>>>> 8ca87097ef854ae9b33a341a38fdfe0236526b10
 int matchendmenu(){
 
 	int matchendmenu = 1,
