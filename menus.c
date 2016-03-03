@@ -1,17 +1,9 @@
-/* Tic-Tac-Toe functions that are menus                             */
+/* Tic-Tac-Toe functions that are menus */
 
 #include "tictactoe.h"
 
 /* Prints and control mainmenu */
 int mainmenu(){
-
-	/* Iniciates ncurses screen */
-	initscr();
-	/* Diseable echoes from terminal */
-	noecho();
-	/* Allows to use KEY_* constants */
-	keypad(stdscr, TRUE);
-	cbreak();
 
 	int mainmenu = 1,
 		y = 5,
@@ -20,14 +12,17 @@ int mainmenu(){
 	clear();
 
 	/* Prints the title */
+	attron(COLOR_PAIR(6));
 	mvprintw(1, 34, "-------------");
 	mvprintw(2, 35, "TIC-TAC-TOE");
 	mvprintw(3, 34, "-------------");
-
+	attroff(COLOR_PAIR(6));
 	/* Prints the options */
-	mvprintw(5, 35, "Play");
+	attron(COLOR_PAIR(1));
+	mvprintw(5, 35, "Play   ");
 	mvprintw(6, 35, "Options");
-	mvprintw(7, 35, "Exit");
+	mvprintw(7, 35, "Exit   ");
+	attroff(COLOR_PAIR(1));
 
 	/* Moves to the first menu's option */
 	move(y, x);
@@ -69,8 +64,10 @@ int matchendmenu(){
 	deleteln();
 
 	/* Then prints the menu where the instructions were */
+	attron(COLOR_PAIR(1));
 	mvprintw(11, 1, "Play again");
 	mvprintw(12, 1, "Main menu");
+	attroff(COLOR_PAIR(1));
 
 	/* Moves to the first option of the menu */
 	move(y, x);

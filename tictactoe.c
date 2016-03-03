@@ -21,6 +21,7 @@ void printboard(){
     clear();
 
     /* Prints the title */
+	attron(COLOR_PAIR(6));
 	mvprintw(1, 34, "-------------");
     mvprintw(2, 35, "TIC-TAC-TOE");
     mvprintw(3, 34, "-------------");
@@ -31,6 +32,7 @@ void printboard(){
     mvprintw(7, 38, " | | ");
     mvprintw(8, 38, "-----");
     mvprintw(9, 38, " | | ");
+	attroff(COLOR_PAIR(6));
 
 	/* Prints instructions */
     mvprintw(11, 0, "Use arrow keys to move and 'Enter' for choosing the place.");
@@ -47,7 +49,7 @@ int command(){
 
 /* Commands everything for long as the 'X' player is in his turn */
 void player1(char place[3][3], int *y, int *x, int *py, int *px, int *endround){
-
+	attron(COLOR_PAIR(2));
 	/* Variable that controls if it's still in his turn */
     int  turn = 1;
 
@@ -102,11 +104,12 @@ void player1(char place[3][3], int *y, int *x, int *py, int *px, int *endround){
             break;
         }
     }
+	attroff(COLOR_PAIR(2));
 }
 
 /* Commands everything for long as the 'O' player is in his turn */
 void player2(char place[3][3], int *y, int *x, int *py, int *px, int *endround){
-
+	attron(COLOR_PAIR(3));
 	/* Variable that controls if it's still in his turn */
     int  turn = 1;
 
@@ -161,6 +164,7 @@ void player2(char place[3][3], int *y, int *x, int *py, int *px, int *endround){
             break;
         }
     }
+	attroff(COLOR_PAIR(3));
 }
 
 /* Tests if somebody won the match. I found no other way to test, but this */
@@ -233,7 +237,9 @@ void match(){
 						move(11, 1);
 						deleteln();
 						deleteln();
+						attron(COLOR_PAIR(5));
 						mvprintw(11, 35, "Its a tie!", shift);
+						attroff(COLOR_PAIR(5));
 						getch();
 						match = matchendmenu();
 					}
@@ -242,7 +248,9 @@ void match(){
 						move(11, 1);
 						deleteln();
 						deleteln();
+						attron(COLOR_PAIR(5));
 						mvprintw(11, 33, "Player '%c' won!", shift);
+						attroff(COLOR_PAIR(5));
 						getch();
 						match = matchendmenu();
 					}
@@ -260,7 +268,9 @@ void match(){
 						move(11, 1);
 						deleteln();
 						deleteln();
+						attron(COLOR_PAIR(5));
 						mvprintw(11, 35, "Its a tie!", shift);
+						attroff(COLOR_PAIR(5));
 						getch();
 						match = matchendmenu();
 					}
@@ -269,7 +279,9 @@ void match(){
 						move(11, 1);
 						deleteln();
 						deleteln();
+						attron(COLOR_PAIR(5));
 						mvprintw(11, 33, "Player '%c' won!", shift);
+						attroff(COLOR_PAIR(5));
 						getch();
 						match = matchendmenu();
 					}
