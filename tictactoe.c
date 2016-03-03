@@ -35,9 +35,11 @@ void printboard(){
 	attroff(COLOR_PAIR(6));
 
 	/* Prints instructions */
-    mvprintw(11, 0, "Use arrow keys to move and 'Enter' for choosing the place.");
+	// attron(COLOR_PAIR(4));
+    mvprintw(11, 0, "Use arrow keys or mouse to choose and 'Enter' for confirming the place.");
 
     mvprintw(12, 0, "'Esc' to leave.");
+	// attroff(COLOR_PAIR(4));
 }
 
 /* Get a char from the keyboard and return it*/
@@ -49,6 +51,7 @@ int command(){
 
 /* Commands everything for long as the 'X' player is in his turn */
 void player1(char place[3][3], int *y, int *x, int *py, int *px, int *endround){
+	MEVENT click;
 	attron(COLOR_PAIR(2));
 	/* Variable that controls if it's still in his turn */
     int  turn = 1;
@@ -89,6 +92,20 @@ void player1(char place[3][3], int *y, int *x, int *py, int *px, int *endround){
                 }
             break;
 
+			case KEY_MOUSE:
+				if (getmouse(&click) == OK){
+					if (click.bstate == BUTTON1_CLICKED){
+						if (click.x >= 38 && click.x <= 42 && click.y >= 5 && click.y <= 9 && click.x % 2 == 0 && (click.y - 1) % 2 == 0){
+							*py = *py + (click.y - *y) / 2;
+							*px = *px + (click.x - *x) / 2;
+							*y = click.y;
+							*x = click.x;
+							move(*y, *x);
+						}
+					}
+				}
+			break;
+
 	        case CHOOSE:
 				if (place[*py][*px] == ' '){
 					printw("X");
@@ -109,6 +126,7 @@ void player1(char place[3][3], int *y, int *x, int *py, int *px, int *endround){
 
 /* Commands everything for long as the 'O' player is in his turn */
 void player2(char place[3][3], int *y, int *x, int *py, int *px, int *endround){
+	MEVENT click;
 	attron(COLOR_PAIR(3));
 	/* Variable that controls if it's still in his turn */
     int  turn = 1;
@@ -148,6 +166,20 @@ void player2(char place[3][3], int *y, int *x, int *py, int *px, int *endround){
                     move(*y, *x);
                 }
             break;
+
+			case KEY_MOUSE:
+				if (getmouse(&click) == OK){
+					if (click.bstate == BUTTON1_CLICKED){
+						if (click.x >= 38 && click.x <= 42 && click.y >= 5 && click.y <= 9 && click.x % 2 == 0 && (click.y - 1) % 2 == 0){
+							*py = *py + (click.y - *y) / 2;
+							*px = *px + (click.x - *x) / 2;
+							*y = click.y;
+							*x = click.x;
+							move(*y, *x);
+						}
+					}
+				}
+			break;
 
 	        case CHOOSE:
 				if (place[*py][*px] == ' '){

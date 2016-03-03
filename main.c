@@ -26,8 +26,6 @@
 #include "tictactoe.h"
 
 int main(){
-	/* Set the event click, for using the mouse */
-	MEVENT click;
 	/* Starts curses screen */
 	initscr();
 	/* Allows to set colors */
@@ -36,7 +34,7 @@ int main(){
 	noecho();
 	/* Allows to use KEY_* constants */
 	keypad(stdscr, TRUE);
-	cbreak();
+	// cbreak();
 	/* Start a mask for all mouse events, wich allows to use'em */
 	mousemask(ALL_MOUSE_EVENTS, NULL);
 	/* Set the colors */

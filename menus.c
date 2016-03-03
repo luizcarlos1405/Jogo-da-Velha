@@ -5,6 +5,9 @@
 /* Prints and control mainmenu */
 int mainmenu(){
 
+	/* Set the event click, for using the mouse */
+	MEVENT click;
+
 	int mainmenu = 1,
 		y = 5,
 		x = 35;
@@ -41,6 +44,17 @@ int mainmenu(){
 				if (y < 7){
 					y++;
 					move(y, x);
+				}
+			break;
+
+			case KEY_MOUSE:
+				if (getmouse(&click) == OK){
+					if (click.bstate == BUTTON1_CLICKED){
+						if (click.x >= 35 && click.x <= 41 && click.y >= 5 && click.y <= 7){
+							move(click.y, x);
+							return click.y;
+						}
+					}
 				}
 			break;
 
