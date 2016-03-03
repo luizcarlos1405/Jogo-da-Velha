@@ -34,7 +34,7 @@ int mainmenu(){
 
 	/* Controls the movement, choosing and the output of the function */
 	while(mainmenu){
-		switch (comand()) {
+		switch (command()) {
 			case UP:
 				if (y > 5){
 					y--;
@@ -77,7 +77,7 @@ int matchendmenu(){
 
 	/* Controls the movement, choosing and the output of the function */
 	while(matchendmenu){
-		switch (comand()) {
+		switch (command()) {
 			case UP:
 				if (y > 11){
 					y--;

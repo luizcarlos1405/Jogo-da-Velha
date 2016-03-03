@@ -15,7 +15,7 @@
 
 void restartboard(char place[3][3]);
 void printboard();
-int comand();
+int command();
 int mainmenu();
 int matchendmenu();
 void match();

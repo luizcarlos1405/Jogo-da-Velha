@@ -39,10 +39,10 @@ void printboard(){
 }
 
 /* Get a char from the keyboard and return it*/
-int comand(){
-    int comand;
-    comand = getch();
-    return comand;
+int command(){
+    int command;
+    command = getch();
+    return command;
 }
 
 /* Commands everything for long as the 'X' player is in his turn */
@@ -54,7 +54,7 @@ void player1(char place[3][3], int *y, int *x, int *py, int *px, int *endround){
 	while (turn){
 
 		/* Controls the movement, choosing and the output of the function */
-	    switch(comand()){
+	    switch(command()){
 	        case UP:
 	            if(*y > 5){
 					*y = *y - 2;
@@ -113,7 +113,7 @@ void player2(char place[3][3], int *y, int *x, int *py, int *px, int *endround){
 	while (turn){
 
 		/* Controls the movement, choosing and the output of the function */
-	    switch(comand()){
+	    switch(command()){
 	        case UP:
 	            if(*y > 5){
 					*y = *y - 2;
